@@ -119,6 +119,11 @@ const getLeadById = async (req, res) => {
             });
         }
 
+         const q = {
+            lead : lead._id
+        }
+        const deal = await dealModel.find(q);
+
         // Ownership check
         if (
             req.user.role === "sales" &&
@@ -132,7 +137,8 @@ const getLeadById = async (req, res) => {
 
         res.status(200).json({
             status: true,
-            lead
+            lead,
+            deal
         });
 
     } catch (error) {
@@ -249,5 +255,6 @@ const getUserWithLeads = async (req, res) => {
         });
     }
 };
+
 
 export { createLead, getLeads, getLeadById, updateLead, deleteLead, getUserWithLeads }
