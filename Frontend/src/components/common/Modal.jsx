@@ -2,7 +2,7 @@ const Modal = ({ open, onClose, children }) => {
     if (!open) return null;
 
     return (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-5">
 
             <div className="bg-white rounded-2xl p-8 w-full max-w-md relative">
 
@@ -18,5 +18,6 @@ const Modal = ({ open, onClose, children }) => {
         </div>
     );
 };
+
 
 export default Modal;
