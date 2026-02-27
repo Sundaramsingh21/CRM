@@ -44,12 +44,12 @@ const Leads = () => {
           </p>
         </div>
 
-        <button
+        {user.role === "sales" ? <button
           onClick={() => setOpenCreate(true)}
           className="bg-indigo-600 max-sm:w-18 max-sm:text-sm cursor-pointer text-white max-sm:px-2 px-5 py-2.5 rounded-xl shadow hover:bg-indigo-700 transition"
         >
           + Add
-        </button>
+        </button> : <></>}
       </div>
 
       <LeadFilters
@@ -108,4 +108,5 @@ const Leads = () => {
 
 
 export default Leads;
+
 
