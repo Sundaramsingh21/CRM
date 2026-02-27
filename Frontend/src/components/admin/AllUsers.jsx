@@ -91,9 +91,9 @@ const AllUsers = () => {
                 </button>
             </div>
 
-            <div className="bg-white rounded-xl shadow-sm border border-gray-400 overflow-hidden">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-400 overflow-x-auto">
 
-                <table className="w-full text-sm">
+                <table className="w-full text-sm overflow-x-auto">
 
                     <thead className="bg-gray-50 text-xs uppercase text-gray-600">
                         <tr>
@@ -194,5 +194,6 @@ const AllUsers = () => {
         </div>
     );
 };
+
 
 export default AllUsers;
