@@ -13,7 +13,7 @@ const Layout = () => {
 
       <div className="flex flex-col flex-1 overflow-hidden">
         <Navbar setSidebarOpen={setSidebarOpen} />
-        <main className="flex-1 overflow-y-auto p-6">
+        <main className="flex-1 overflow-y-auto p-3">
           <Outlet />
         </main>
       </div>
@@ -21,5 +21,6 @@ const Layout = () => {
     </div>
   );
 };
+
 
 export default Layout;
