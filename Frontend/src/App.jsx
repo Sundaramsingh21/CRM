@@ -16,7 +16,7 @@ import LeadDetail from "./pages/leads/LeadDetails";
 import Loading from "./components/Loading";
 import DealDetail from "./pages/deals/DealDetail";
 import ActivityDetail from "./pages/activities/ActivityDetail";
-import Users from "./pages/user/user";
+import Users from "./pages/user/User";
 
 const App = () => {
 
