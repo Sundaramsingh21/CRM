@@ -51,6 +51,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                         className={({ isActive }) =>
                             `${linkStyle} ${isActive ? activeStyle : inactiveStyle}`
                         }
+                        onClick={() => setSidebarOpen(false)}
                     >
                         <LayoutDashboard size={18} />
                         Dashboard
@@ -61,6 +62,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                         className={({ isActive }) =>
                             `${linkStyle} ${isActive ? activeStyle : inactiveStyle}`
                         }
+                        onClick={() => setSidebarOpen(false)}
                     >
                         <Users size={18} />
                         Leads
@@ -71,6 +73,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                         className={({ isActive }) =>
                             `${linkStyle} ${isActive ? activeStyle : inactiveStyle}`
                         }
+                        onClick={() => setSidebarOpen(false)}
                     >
                         <Briefcase size={18} />
                         Deals
@@ -81,6 +84,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                         className={({ isActive }) =>
                             `${linkStyle} ${isActive ? activeStyle : inactiveStyle}`
                         }
+                        onClick={() => setSidebarOpen(false)}
                     >
                         <Activity size={18} />
                         Activities
@@ -91,6 +95,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                             className={({ isActive }) =>
                                 `${linkStyle} ${isActive ? activeStyle : inactiveStyle}`
                             }
+                            onClick={() => setSidebarOpen(false)}
                         >
                             <User size={18} />
                             Users
@@ -101,5 +106,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
         </>
     );
 };
+
 
 export default Sidebar;
