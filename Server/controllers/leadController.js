@@ -1,5 +1,6 @@
 import leadModel from "../models/leadModel.js";
 import userModel from "../models/userModel.js";
+import dealModel from "../models/dealModel.js";
 
 const createLead = async (req, res) => {
     try {
@@ -258,3 +259,4 @@ const getUserWithLeads = async (req, res) => {
 
 
 export { createLead, getLeads, getLeadById, updateLead, deleteLead, getUserWithLeads }
+
