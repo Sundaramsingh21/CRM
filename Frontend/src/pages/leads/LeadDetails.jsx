@@ -13,6 +13,7 @@ const LeadDetail = () => {
   const { BackendURL, token } = useContext(AppContext);
 
   const [lead, setLead] = useState(null);
+  const [deals, setDeals] = useState([]);
   const [openEdit, setOpenEdit] = useState(false);
 
   useEffect(() => {
@@ -24,6 +25,7 @@ const LeadDetail = () => {
 
         if (res.data.status) {
           setLead(res.data.lead);
+          setDeals(res.data?.deal || []);
         } else {
           toast.error(res.data?.message || "Something went wrong");
         }
@@ -129,7 +131,7 @@ const LeadDetail = () => {
           <div className="px-10 py-10 grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-10">
 
             <Detail label="Email Address" value={lead.email} />
-            
+
 
             <Detail
               label="Assigned To (Sales User)"
@@ -154,6 +156,54 @@ const LeadDetail = () => {
 
           </div>
 
+        </div>
+        {/* Deals Section */}
+        <div className="bg-white rounded-2xl shadow-md border border-gray-100 p-10">
+
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-xl font-semibold text-gray-800">
+              Related Deals
+            </h2>
+
+            <span className="text-sm text-gray-500">
+              {deals.length} Deal{deals.length !== 1 && "s"}
+            </span>
+          </div>
+
+          {deals.length === 0 ? (
+            <div className="text-center py-10 text-gray-400">
+              No deals found for this lead.
+            </div>
+          ) : (
+            <div className="space-y-4">
+              {deals.map((deal) => (
+                <div
+                  key={deal._id}
+                  className="p-6 border rounded-xl flex justify-between items-center hover:shadow-sm transition bg-gray-50"
+                >
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      {deal.title}
+                    </h3>
+
+                    <span className="text-sm text-gray-500">
+                      Stage: {deal.stage}
+                    </span>
+                  </div>
+
+                  <div className="text-right">
+                    <p className="text-indigo-600 font-bold text-lg">
+                      ₹ {deal.amount.toLocaleString()}
+                    </p>
+
+                    <p className="text-xs text-gray-400">
+                      {new Date(deal.createdAt).toLocaleDateString()}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
