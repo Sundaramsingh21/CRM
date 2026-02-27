@@ -7,7 +7,8 @@ export const AppContext = createContext()
 
 export const AppContextProvider = (props) => {
 
-    const BackendURL = "http://localhost:5000"
+    // const BackendURL = "http://localhost:5000"
+    const BackendURL = "https://crm-backend-8aez.onrender.com"
     const navigate = useNavigate();
     const [user, setUser] = useState(null)
     const [token, settoken] = useState(null)
@@ -372,4 +373,5 @@ export const AppContextProvider = (props) => {
             {props.children}
         </AppContext.Provider>
     )
+
 }
