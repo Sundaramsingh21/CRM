@@ -35,22 +35,21 @@ const Leads = () => {
     <div className="p-6 bg-gray-50 rounded-md min-h-screen space-y-6">
 
       <div className="flex justify-between items-center">
-        <div>
-          <h1 className="text-3xl font-bold text-gray-800">
+        <div className="max-sm:pr-6">
+          <h1 className="md:text-3xl sm:text-2xl font-bold text-gray-800">
             Leads Management
           </h1>
-          <p className="text-gray-500 mt-1">
+          <p className="text-gray-500 max-sm:text-sm mt-1">
             Manage and track all your sales leads
           </p>
         </div>
 
-        { user?.role === "sales" ?
         <button
           onClick={() => setOpenCreate(true)}
-          className="bg-indigo-600 cursor-pointer text-white px-5 py-2.5 rounded-xl shadow hover:bg-indigo-700 transition"
+          className="bg-indigo-600 max-sm:w-18 max-sm:text-sm cursor-pointer text-white max-sm:px-2 px-5 py-2.5 rounded-xl shadow hover:bg-indigo-700 transition"
         >
-          + Add Lead
-        </button> : <></>}
+          + Add
+        </button>
       </div>
 
       <LeadFilters
@@ -109,3 +108,4 @@ const Leads = () => {
 
 
 export default Leads;
+
