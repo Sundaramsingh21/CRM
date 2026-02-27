@@ -33,10 +33,10 @@ const Deals = () => {
   }
 
   return (
-    <div className="p-10 bg-gray-50 min-h-screen space-y-8">
+    <div className="p-6 bg-gray-50 min-h-screen space-y-8">
 
       {/* Header */}
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center max-sm:flex-col max-sm:gap-5">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">
             Deals Pipeline
@@ -107,5 +107,6 @@ const Deals = () => {
     </div>
   );
 };
+
 
 export default Deals;
