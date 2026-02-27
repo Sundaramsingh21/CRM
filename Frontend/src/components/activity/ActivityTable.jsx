@@ -27,9 +27,9 @@ const ActivityTable = ({
     }
 
     return (
-        <div className="bg-white rounded-xl shadow-sm border  border-gray-400 overflow-hidden">
+        <div className="bg-white rounded-xl shadow-sm border  border-gray-400 overflow-x-auto">
 
-            <table className="w-full text-sm">
+            <table className="w-full text-sm overflow-x-auto">
 
                 <thead className="bg-gray-50 text-gray-600 text-xs uppercase">
                     <tr>
@@ -112,5 +112,6 @@ const ActivityTable = ({
         </div>
     );
 };
+
 
 export default ActivityTable;
