@@ -74,7 +74,7 @@ const DealDetail = () => {
                     <div className="flex justify-between items-start">
 
                         <div className="space-y-3">
-                            <h1 className="text-3xl font-bold text-gray-900">
+                            <h1 className="text-3xl max-sm:text-xl font-bold text-gray-900">
                                 {deal.title}
                             </h1>
 
@@ -89,7 +89,7 @@ const DealDetail = () => {
 
                         <div className="text-right">
                             <p className="text-sm text-gray-500">Deal Value</p>
-                            <p className="text-3xl font-bold text-indigo-600">
+                            <p className="text-3xl max-sm:text-xl font-bold text-indigo-600">
                                 ₹ {deal.amount.toLocaleString()}
                             </p>
                         </div>
@@ -232,5 +232,6 @@ const DealDetail = () => {
         </div>
     );
 };
+
 
 export default DealDetail;
