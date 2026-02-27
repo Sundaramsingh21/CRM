@@ -75,9 +75,9 @@ const PendingUsers = () => {
     return (
         <div className="space-y-6">
 
-            <div className="bg-white rounded-2xl shadow-sm border overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-sm border overflow-x-auto">
 
-                <table className="w-full text-sm">
+                <table className="w-full text-sm overflow-x-auto">
 
                     <thead className="bg-gray-50 text-xs uppercase text-gray-600">
                         <tr>
@@ -169,5 +169,6 @@ const PendingUsers = () => {
         </div>
     );
 };
+
 
 export default PendingUsers;
