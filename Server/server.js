@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cors({
   origin: (origin, callback) => {
     const allowedOrigins = [
-      "https://crm-pro-app.onrender.com/"
+      "https://crm-pro-app.onrender.com"
     ];
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
@@ -51,3 +51,4 @@ app.listen(PORT, () => {
     console.log(`Server running on port http://localhost:${PORT}`);
 
 });
+
