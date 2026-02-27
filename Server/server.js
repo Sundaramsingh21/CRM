@@ -21,7 +21,20 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: (origin, callback) => {
+    const allowedOrigins = [
+      "https://crm-pro-app.onrender.com/"
+    ];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  methods: ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization","token"],
+}));
 // app.use(morgan("dev"));
 
 //endpoints
@@ -36,4 +49,5 @@ app.get('/', (req, res) => res.send('Server Started'));
 
 app.listen(PORT, () => {
     console.log(`Server running on port http://localhost:${PORT}`);
+
 });
