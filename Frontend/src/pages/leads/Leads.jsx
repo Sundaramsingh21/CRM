@@ -10,7 +10,7 @@ import LeadForm from "../../components/lead/LeadForm";
 import DeleteConfirm from "../../components/lead/DeleteConfirm";
 
 const Leads = () => {
-  const { leads, leadsLoading, leadsPagination, getLeads } = useContext(AppContext);
+  const { leads, leadsLoading, leadsPagination, getLeads, user } = useContext(AppContext);
 
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState("");
@@ -44,12 +44,13 @@ const Leads = () => {
           </p>
         </div>
 
+        { user?.role === "sales" ?
         <button
           onClick={() => setOpenCreate(true)}
           className="bg-indigo-600 cursor-pointer text-white px-5 py-2.5 rounded-xl shadow hover:bg-indigo-700 transition"
         >
           + Add Lead
-        </button>
+        </button> : <></>}
       </div>
 
       <LeadFilters
@@ -105,5 +106,6 @@ const Leads = () => {
     </div>
   );
 };
+
 
 export default Leads;
