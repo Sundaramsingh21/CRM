@@ -6,7 +6,7 @@ const Users = () => {
     const [activeTab, setActiveTab] = useState("all");
 
     return (
-        <div className="bg-gray-50 min-h-screen p-8">
+        <div className="bg-gray-50 min-h-screen p-8 max-sm:p-2">
 
             <div className="max-w-7xl mx-auto space-y-8">
 
@@ -52,5 +52,6 @@ const Users = () => {
         </div>
     );
 };
+
 
 export default Users;
