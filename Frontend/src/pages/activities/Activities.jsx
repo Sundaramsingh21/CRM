@@ -57,7 +57,7 @@ const Activities = () => {
   }
 
   return (
-    <div className="bg-gray-50 min-h-screen p-8 max-sm:p-4">
+    <div className="bg-gray-50 min-h-screen p-8 max-sm:p-2">
 
       <div className="max-w-7xl mx-auto space-y-8">
 
@@ -163,3 +163,4 @@ const Activities = () => {
 
 
 export default Activities;
+
