@@ -33,7 +33,7 @@ const Deals = () => {
   }
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen space-y-8">
+    <div className="p-6 max-sm:p-2 bg-gray-50 min-h-screen space-y-8">
 
       {/* Header */}
       <div className="flex justify-between items-center max-sm:flex-col max-sm:gap-5">
@@ -110,3 +110,4 @@ const Deals = () => {
 
 
 export default Deals;
+
