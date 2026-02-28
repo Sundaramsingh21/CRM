@@ -32,7 +32,7 @@ const Leads = () => {
 
 
   return (
-    <div className="p-6 bg-gray-50 rounded-md min-h-screen space-y-6">
+    <div className="p-6 max-sm:p-2 bg-gray-50 rounded-md min-h-screen space-y-6">
 
       <div className="flex justify-between items-center">
         <div className="max-sm:pr-6">
@@ -108,5 +108,6 @@ const Leads = () => {
 
 
 export default Leads;
+
 
 
