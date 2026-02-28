@@ -72,7 +72,7 @@ const LeadDetail = () => {
     );
 
   return (
-    <div className="bg-gray-50 min-h-screen p-10">
+    <div className="bg-gray-50 min-h-screen p-10 max-sm:p-2">
 
       <div className="max-w-6xl mx-auto space-y-8">
 
@@ -223,3 +223,4 @@ const LeadDetail = () => {
 };
 
 export default LeadDetail;
+
