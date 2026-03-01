@@ -212,6 +212,16 @@ const deleteLead = async (req, res) => {
             });
         }
 
+        //CHECK IF DEAL EXISTS FOR THIS LEAD
+        const existingDeal = await dealModel.findOne({ lead: lead._id });
+
+        if (existingDeal) {
+            return res.status(400).json({
+                status: false,
+                message: "Cannot delete lead because a deal exists for this lead"
+            });
+        }
+
         await lead.deleteOne();
 
         res.status(200).json({
@@ -259,4 +269,5 @@ const getUserWithLeads = async (req, res) => {
 
 
 export { createLead, getLeads, getLeadById, updateLead, deleteLead, getUserWithLeads }
+
 
