@@ -198,6 +198,10 @@ export const AppContextProvider = (props) => {
             }
 
         } catch (error) {
+            toast.error(
+            error.response?.data?.message ||
+            "Create failed"
+        );
             console.error("Create lead error:", error);
         }
     };
@@ -222,6 +226,10 @@ export const AppContextProvider = (props) => {
             }
 
         } catch (error) {
+            toast.error(
+            error.response?.data?.message ||
+            "Update failure"
+        );
             console.error("Update lead error:", error);
         }
     };
@@ -245,6 +253,10 @@ export const AppContextProvider = (props) => {
             }
 
         } catch (error) {
+            toast.error(
+            error.response?.data?.message ||
+            "Delete failed"
+        );
             console.error("Delete lead error:", error);
         }
     };
@@ -289,6 +301,10 @@ export const AppContextProvider = (props) => {
                 toast.error(res.data.message || "Something went wrong")
             }
         } catch (error) {
+            toast.error(
+            error.response?.data?.message ||
+            "Create failed"
+        );
             toast.error("Failed to create deal");
         }
     };
@@ -309,6 +325,10 @@ export const AppContextProvider = (props) => {
                 toast.error(res.data.message || "Something went wrong")
             }
         } catch (error) {
+            toast.error(
+            error.response?.data?.message ||
+            "Update failed"
+        );
             toast.error("Failed to update deal");
         }
     };
@@ -327,6 +347,7 @@ export const AppContextProvider = (props) => {
                 toast.error(res.data.message || "Something went wrong")
             }
         } catch (error) {
+            
             toast.error("Failed to delete deal");
         }
     };
@@ -375,3 +396,4 @@ export const AppContextProvider = (props) => {
     )
 
 }
+
