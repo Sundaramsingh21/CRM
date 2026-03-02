@@ -23,7 +23,7 @@ const Dashboard = () => {
   if (dashboardLoading) return <Loading />;
 
   return (
-    <div className="p-4  min-h-screen space-y-10">
+    <div className="p-4 max-sm:p-2 min-h-screen space-y-10">
 
       {/* Stat Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -81,5 +81,6 @@ const Dashboard = () => {
     </div>
   );
 };
+
 
 export default Dashboard;
