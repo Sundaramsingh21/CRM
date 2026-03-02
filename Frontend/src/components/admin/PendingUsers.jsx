@@ -60,7 +60,7 @@ const PendingUsers = () => {
                 setSelectedUser(null);
                 setActionType(null);
                 toast.success(
-                    actionType === "approved"
+                    actionType === "approve"
                         ? "User approved successfully"
                         : "User rejected successfully"
                 );
@@ -175,4 +175,5 @@ const PendingUsers = () => {
 
 
 export default PendingUsers;
+
 
