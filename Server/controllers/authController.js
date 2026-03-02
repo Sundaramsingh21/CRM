@@ -6,7 +6,7 @@ const register = async (req, res) => {
     const { name, email, password } = req.body;
 
     try {
-        // 🔹 Basic Validation
+        // Basic Validation
         if (!name || !email || !password) {
             return res.status(400).json({
                 status: false,
@@ -14,7 +14,7 @@ const register = async (req, res) => {
             });
         }
 
-        // 🔹 Email Format Validation
+        // Email Format Validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!emailRegex.test(email)) {
@@ -24,7 +24,7 @@ const register = async (req, res) => {
             });
         }
 
-        // 🔹 Password Length Validation
+        // Password Length Validation
         if (password.length < 5) {
             return res.status(400).json({
                 status: false,
@@ -141,6 +141,13 @@ const rejectUser = async (req, res) => {
         if (!user) {
             return res.status(404).json({ message: "User not found" });
         }
+        
+        if (user.role === "admin") {
+            return res.status(400).json({
+                status: false,
+                message: "Admin cannot be rejected"
+            });
+         }
 
         user.status = "rejected";
         user.approvedBy = req.user.id;
@@ -216,6 +223,7 @@ const createSalesUser = async (req, res) => {
         res.status(500).json({ success: false, message: "Server error during registration" });
     }
 };
+
 
 
 export { login, register, getUsers, getPendingUsers, approveUser, rejectUser, createSalesUser }
