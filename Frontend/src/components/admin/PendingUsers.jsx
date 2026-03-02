@@ -68,6 +68,9 @@ const PendingUsers = () => {
                 fetchPendingUsers(); // refresh table
             }
         } catch (error) {
+            toast.error(
+                error.response?.data?.message || "Something went wrong"
+            );
             console.log("Error updating user:", error);
         }
     };
@@ -172,3 +175,4 @@ const PendingUsers = () => {
 
 
 export default PendingUsers;
+
