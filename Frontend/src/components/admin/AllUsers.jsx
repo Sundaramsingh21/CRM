@@ -61,7 +61,9 @@ const AllUsers = () => {
             }
 
         } catch (error) {
-            toast.error("Something went wrong");
+            toast.error(
+                error.response?.data?.message || "Something went wrong"
+            );
             console.log("Action error:", error);
         }
     };
@@ -197,3 +199,4 @@ const AllUsers = () => {
 
 
 export default AllUsers;
+
