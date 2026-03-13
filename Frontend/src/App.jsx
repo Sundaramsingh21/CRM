@@ -61,7 +61,7 @@ const App = () => {
           <Route path="/activities" element={<Activities />} />
           <Route path="/activities/:id" element={<ActivityDetail />} />
 
-          {/* Admin Only Example */}
+          {/* Admin Only */}
           <Route
             path="/admin-users"
             element={
